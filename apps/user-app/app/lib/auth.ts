@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 export const authOptions = {
     providers: [
       CredentialsProvider({
-          name: 'Credentials',
+          name: 'Phone',
           credentials: {
             phone: { label: "Phone number", type: "text", placeholder: "1231231231", required: true },
             password: { label: "Password", type: "password", required: true }
@@ -26,7 +26,7 @@ export const authOptions = {
                     return {
                         id: existingUser.id.toString(),
                         name: existingUser.name,
-                        email: existingUser.number
+                        phone: existingUser.number
                     }
                 }
                 return null;
@@ -43,7 +43,7 @@ export const authOptions = {
                 return {
                     id: user.id.toString(),
                     name: user.name,
-                    email: user.number
+                    phone: user.number
                 }
             } catch(e) {
                 console.error(e);
